@@ -18,6 +18,7 @@ export const Container = styled.div`
     font-weight: 600;
     line-height: 33px;
     color: var(--black-light);
+    margin-bottom: 30px;
   }
 
   h6 {
@@ -41,13 +42,31 @@ export const Container = styled.div`
 
     margin-bottom: 15px;
   }
+
+  input {
+    width: 92%;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #D0D0D0;
+    outline: 0;
+    padding-left: 50px;
+    z-index: 1;
+  }
 `;
 
-export const Input = styled.div`
+export const IconeInput = styled.div`
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 15px;
+  position: relative;
+  background: red;
+  bottom: -30px;
   width: 92%;
-  height: 40px;
-  border-radius: 8px;
-  border: 1px solid #D0D0D0;
+  i {
+    font-size: 20px;
+    z-index: 2;
+  }
 `;
 
 export const ButtonLogin = styled.div`

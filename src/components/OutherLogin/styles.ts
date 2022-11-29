@@ -5,6 +5,11 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 740px) {
+    justify-content: center;
+    flex-direction: column;
+  }
+
   margin-bottom: 24px;
 `;
 
@@ -17,6 +22,10 @@ export const TagLogin = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 740px) {
+    margin-bottom: 3px;
+    width: 100%;
+  }
 `
 export const IconLogin = styled.div`
   margin-right: 8px;
