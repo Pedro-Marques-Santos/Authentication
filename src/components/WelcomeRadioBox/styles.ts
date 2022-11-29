@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
 
   div {
+    cursor: pointer;
     width: 15px;
     height: 15px;
     margin: 5px;

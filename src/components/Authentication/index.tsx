@@ -1,5 +1,6 @@
 import { Introduction } from "../Introduction";
-import { Login } from "../Login";
+//import { Login } from "../Login";
+import { Register } from "../Register";
 import { Container, ContainerContent } from "./styles";
 
 export function Authentication() {
@@ -7,7 +8,7 @@ export function Authentication() {
     <ContainerContent>
       <Container>
         <Introduction />
-        <Login />
+        <Register />
       </Container>
     </ContainerContent>
   );

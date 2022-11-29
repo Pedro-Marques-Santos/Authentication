@@ -21,29 +21,6 @@ export const Container = styled.div`
     margin-bottom: 30px;
   }
 
-  h6 {
-    cursor: pointer;
-    width: 92%;
-    display: flex;
-    justify-content: end;
-
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-    color: var(--azul-legenda);
-
-    margin-bottom: 30px;
-  }
-
-  h2 {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-    color: var(--gray);
-
-    margin-bottom: 15px;
-  }
-
   input {
     width: 92%;
     height: 40px;
@@ -70,7 +47,8 @@ export const IconeInput = styled.div`
   }
 `;
 
-export const ButtonLogin = styled.div`
+export const ButtonRegister = styled.div`
+  margin-top: 48px;
   cursor: pointer;
   color: var(--white);
   width: 92%;
@@ -84,44 +62,6 @@ export const ButtonLogin = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
-
-  margin-bottom: 8px;
-`
-
-export const ButtonRegister = styled.div`
-  cursor: pointer;
-  color: var(--azul-escuro);
-  width: 92%;
-  height: 40px;
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid var(--azul-escuro);
-
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 19px;
-`
-
-export const TagOr = styled.div`
-  display: flex;
-  align-items: center;
-  color: var(--gray);
-  h5 {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-  }
-
-  hr {
-    width: 100px;
-    height: 1px;
-    background: var(--white-gray);
-    border: none;
-  }
 
   margin-bottom: 8px;
 `
