@@ -13,6 +13,9 @@ export const GlobalStyle = createGlobalStyle`
         --background: #FFFFFF;
         --black-light: #343434;
         --gray-borda: #bdbebd;
+        --gray-fundo-perfil: #6A6F77;
+        --gray-white: #FFFFFFB2;
+        --black-perfil: #191B1D;
     }
 
     // font-size: Padrão 16px

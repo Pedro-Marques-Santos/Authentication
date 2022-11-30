@@ -2,6 +2,11 @@ import { OutherLogin } from "../OutherLogin";
 import { ButtonLogin, ButtonRegister, Container, IconeInput, TagOr } from "./styles";
 
 export function Login() {
+
+  function logarAccount() {
+    console.log('aqui')
+  }
+
   return (
     <Container>
       <h3>Welcome</h3>
@@ -18,7 +23,7 @@ export function Login() {
         placeholder="Password"
       />
       <h6>Forgot password?</h6>
-      <ButtonLogin>Login</ButtonLogin>
+      <ButtonLogin onClick={logarAccount}>Login</ButtonLogin>
       <TagOr>
         <hr />
         <h5>Or</h5>
