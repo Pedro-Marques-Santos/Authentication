@@ -1,10 +1,14 @@
+import { useContext } from "react";
+import { AuthenticationContext } from "../../context/authentication";
 import { OutherLogin } from "../OutherLogin";
 import { ButtonLogin, ButtonRegister, Container, IconeInput, TagOr } from "./styles";
 
 export function Login() {
 
-  function logarAccount() {
-    console.log('aqui')
+  const authentication = useContext(AuthenticationContext)
+
+  function RegisterAccount() {
+    authentication?.dispatch({ type: "REGISTER" })
   }
 
   return (
@@ -21,9 +25,10 @@ export function Login() {
       </IconeInput>
       <input
         placeholder="Password"
+        type="password"
       />
       <h6>Forgot password?</h6>
-      <ButtonLogin onClick={logarAccount}>Login</ButtonLogin>
+      <ButtonLogin >Login</ButtonLogin>
       <TagOr>
         <hr />
         <h5>Or</h5>
@@ -31,7 +36,7 @@ export function Login() {
       </TagOr>
       <OutherLogin />
       <h2>Have no account yet?</h2>
-      <ButtonRegister>Register</ButtonRegister>
+      <ButtonRegister onClick={RegisterAccount}>Register</ButtonRegister>
     </Container>
   );
 }

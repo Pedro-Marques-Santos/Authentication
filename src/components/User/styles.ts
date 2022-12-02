@@ -12,7 +12,6 @@ export const Container = styled.div`
 `
 
 export const ImgUser = styled.div`
-  background: white;
   display: flex;
   flex: 1;
   max-width: 95px;
@@ -20,6 +19,13 @@ export const ImgUser = styled.div`
   max-height: 95px;
   min-height: 95px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 130px;
+    border-radius: 50%;
+  }
 `
 
 export const Name = styled.div`

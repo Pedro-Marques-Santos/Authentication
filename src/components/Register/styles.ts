@@ -26,6 +26,7 @@ export const Container = styled.div`
     height: 40px;
     border-radius: 8px;
     border: 1px solid #D0D0D0;
+    background: white;
     outline: 0;
     padding-left: 50px;
     z-index: 1;
@@ -64,4 +65,20 @@ export const ButtonRegister = styled.div`
   line-height: 19px;
 
   margin-bottom: 8px;
+`
+
+export const ButtonLogin = styled.div`
+  cursor: pointer;
+  color: var(--white);
+  width: 92%;
+  height: 40px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
 `

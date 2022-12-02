@@ -1,10 +1,12 @@
 import { Button, Container, ImgUser, Name } from "./styles";
 
+import person from '../../assets/person.png'
+
 export function User() {
   return (
     <Container>
       <ImgUser>
-
+        <img src={person} alt="" />
       </ImgUser>
       <Name>
         Pedro Marques

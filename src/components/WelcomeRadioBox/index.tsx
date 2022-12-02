@@ -1,15 +1,33 @@
-import { Container } from "./styles";
+import { Dispatch, SetStateAction } from "react";
+
+import { Container, RadioBox } from "./styles";
 
 import radiostart from '../../assets/selector.png'
 
-export function WelcomeRadioBox() {
+interface WelcomeRadioBoxProps {
+  type: string;
+  setType: Dispatch<SetStateAction<string>>;
+}
+
+export function WelcomeRadioBox({ type, setType }: WelcomeRadioBoxProps) {
+
   return (
     <Container>
-      <div>
-        <img src={radiostart} alt="" />
-      </div>
-      <div></div>
-      <div></div>
+      <RadioBox onClick={() => setType('ABOUT')}>
+        {
+          type === 'ABOUT' && <img src={radiostart} alt="" />
+        }
+      </RadioBox>
+      <RadioBox onClick={() => setType('HEROES')}>
+        {
+          type === 'HEROES' && <img src={radiostart} alt="" />
+        }
+      </RadioBox>
+      <RadioBox onClick={() => setType('DREAM')}>
+        {
+          type === 'DREAM' && <img src={radiostart} alt="" />
+        }
+      </RadioBox>
     </Container>
   );
 }
