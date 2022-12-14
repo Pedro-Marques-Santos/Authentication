@@ -25,7 +25,7 @@ const initialState = {
 
 const authenticationReducer = (state: IInitialState, action: ReducerAction) => {
 
-  console.log(state);
+  //console.log(state);
 
   switch (action.type) {
     case "REGISTER":

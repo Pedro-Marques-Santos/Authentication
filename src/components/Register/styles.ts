@@ -39,7 +39,6 @@ export const IconeInput = styled.div`
   align-items: center;
   padding-left: 15px;
   position: relative;
-  background: red;
   bottom: -30px;
   width: 92%;
   i {

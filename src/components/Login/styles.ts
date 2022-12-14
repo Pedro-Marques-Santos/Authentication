@@ -25,7 +25,6 @@ export const Container = styled.div`
     cursor: pointer;
     width: 92%;
     display: flex;
-    justify-content: end;
 
     font-size: 14px;
     font-weight: 400;
@@ -56,13 +55,29 @@ export const Container = styled.div`
   }
 `;
 
+interface ErrorProps {
+  errorState: boolean;
+}
+
+export const Error = styled.div<ErrorProps>`
+  position: fixed;
+  left: ${(props) => props.errorState === false ? '100%' : ''};
+  width: 50%;
+  font-size: 13px;
+  color: red;
+`
+
+export const ForgetPassword = styled.div`
+  width: 100%;
+  text-align: end;
+`
+
 export const IconeInput = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
   padding-left: 15px;
   position: relative;
-  background: red;
   bottom: -30px;
   width: 92%;
   i {
