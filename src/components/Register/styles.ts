@@ -31,11 +31,22 @@ export const Container = styled.div`
     padding-left: 50px;
     z-index: 1;
   }
+
+  h6 {
+    width: 92%;
+  }
 `;
 
-export const Error = styled.div`
-  width: 92%;
-  color: transparent;
+interface ErrorProps {
+  errorState?: boolean;
+  isActive?: boolean
+}
+
+export const Error = styled.div<ErrorProps>`
+  position: fixed;
+  font-weight: normal;
+  color: ${(props) => props.isActive === true ? 'red' : 'transparent'};
+  font-size: 13px;
 `
 
 export const IconeInput = styled.div`
@@ -53,7 +64,7 @@ export const IconeInput = styled.div`
 `;
 
 export const ButtonRegister = styled.div`
-  margin-top: 38px;
+  margin-top: 30px;
   cursor: pointer;
   color: var(--white);
   width: 92%;
