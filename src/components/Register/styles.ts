@@ -33,6 +33,11 @@ export const Container = styled.div`
   }
 `;
 
+export const Error = styled.div`
+  width: 92%;
+  color: transparent;
+`
+
 export const IconeInput = styled.div`
   display: flex;
   justify-content: start;
@@ -48,7 +53,7 @@ export const IconeInput = styled.div`
 `;
 
 export const ButtonRegister = styled.div`
-  margin-top: 48px;
+  margin-top: 38px;
   cursor: pointer;
   color: var(--white);
   width: 92%;

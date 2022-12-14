@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthenticationContext } from "../../context/authentication";
-import { ButtonLogin, ButtonRegister, Container, IconeInput } from "./styles";
+import { ButtonLogin, ButtonRegister, Container, IconeInput, Error } from "./styles";
 
 export function Register() {
 
@@ -39,6 +39,7 @@ export function Register() {
         placeholder="Confirm password"
         type="password"
       />
+      <Error>E-mail doest not exist</Error>
       <ButtonRegister>Register</ButtonRegister>
       <ButtonLogin onClick={logarAccount}>Login</ButtonLogin>
     </Container>

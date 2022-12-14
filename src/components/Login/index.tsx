@@ -27,6 +27,24 @@ export function Login() {
   const [messageError, setMessageError] = useState<string | undefined>('');
   const [errorState, setErrorState] = useState(false);
 
+  function invalidEmail(emailState: boolean) {
+    if (!emailState) {
+      setMessageError('invalid email or password');
+      setErrorState(true);
+      setEmail('');
+      setPassword('');
+    }
+  }
+
+  function invalidPassword(password: string) {
+    if (!password) {
+      setMessageError('invalid email or password');
+      setErrorState(true);
+      setEmail('');
+      setPassword('');
+    }
+  }
+
   async function handleLogin() {
 
     let emailState = false;
@@ -35,19 +53,9 @@ export function Login() {
       emailState = true;
     }
 
-    if (!emailState) {
-      setMessageError('invalid email or password');
-      setErrorState(true);
-      setEmail('');
-      setPassword('');
-    }
+    invalidEmail(emailState);
 
-    if (!password) {
-      setMessageError('invalid email or password');
-      setErrorState(true);
-      setEmail('');
-      setPassword('');
-    }
+    invalidPassword(password);
 
     if (emailState && password) {
 
