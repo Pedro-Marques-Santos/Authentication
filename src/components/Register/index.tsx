@@ -4,6 +4,8 @@ import { AuthenticationContext } from "../../context/authentication";
 import { ButtonLogin, ButtonRegister, Container, IconeInput, Error } from "./styles";
 
 import validator from "validator";
+import { AlertRegisterSuccess } from "../AlertRegisterSuccess";
+import { AlertRegisterError } from "../AlertRegisterError";
 
 interface ResponseCreate {
   message?: string;
@@ -16,8 +18,8 @@ export function Register() {
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfimation] = useState('');
 
-  const [nameError, setNameError] = useState('');
-  const [messageErrorEmail, setMessageErrorEmail] = useState<string>('');
+  const [alertError, setAlertError] = useState(false);
+  const [alertSuccess, setAlertSuccess] = useState(false);
 
   const [errorEMail, setErrorEmail] = useState('');
   const [errorName, setErrorName] = useState('');
@@ -26,7 +28,6 @@ export function Register() {
 
   function invalidName(name: string) {
     if (!name) {
-      setNameError('E-mail doest not exist');
       setErrorName('name')
     }
     if (name) {
@@ -36,7 +37,6 @@ export function Register() {
 
   function invalidEmail(emailState: boolean) {
     if (!emailState) {
-      setMessageErrorEmail('E-mail doest not exist');
       setErrorEmail('email');
     }
     if (emailState) {
@@ -46,7 +46,6 @@ export function Register() {
 
   function invalidPassword(password: string) {
     if (!password) {
-      setMessageErrorEmail('E-mail doest not exist');
       setErrorPassword('password');
     }
     if (password) {
@@ -56,7 +55,6 @@ export function Register() {
 
   function invalidCPassword(passwordConfirmation: string) {
     if (password !== passwordConfirmation || passwordConfirmation === '') {
-      setMessageErrorEmail('E-mail doest not exist');
       setErrorPConfimation('pconfimation');
     }
     if (password === passwordConfirmation && passwordConfirmation !== '') {
@@ -99,11 +97,19 @@ export function Register() {
         setEmail('');
         setPassword('');
         setPasswordConfimation('');
+        setAlertSuccess(true);
+        setTimeout(() => {
+          setAlertSuccess(false);
+        }, 4900);
       }
 
       if (response.status === 401) {
         let result = await response.json() as ResponseCreate;
         console.log(result.message)
+        setAlertError(true)
+        setTimeout(() => {
+          setAlertError(false);
+        }, 4900);
       }
 
     }
@@ -174,6 +180,8 @@ export function Register() {
       </h6>
       <ButtonRegister onClick={handleRegister}>Register</ButtonRegister>
       <ButtonLogin onClick={logarAccount}>Login</ButtonLogin>
+      <AlertRegisterSuccess alertSuccess={alertSuccess} />
+      <AlertRegisterError alertError={alertError} />
     </Container>
   );
 }
