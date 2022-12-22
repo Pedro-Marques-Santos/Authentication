@@ -6,11 +6,12 @@ import { Profile } from "./components/Profile";
 import { AuthenticationProvider } from "./context/authentication";
 
 export function App() {
+
   return (
     <AuthenticationProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Authentication />} />
+          <Route path="/index" element={<Authentication />} />
         </Routes>
         <Routes>
           <Route path="/profile" element={<Profile />} />

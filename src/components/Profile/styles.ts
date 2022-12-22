@@ -62,3 +62,20 @@ export const Icon = styled.div`
   display: flex;
   align-items: center;
 `
+
+export const ErrorAcc = styled.div`
+  font-size: 18px;
+  padding: 10px;
+`
+
+export const ButtonLogin = styled.div`
+  cursor: pointer;
+  margin-top: 10px;
+  width: 150px;
+  padding: 5px;
+  background: var(--azul-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+`

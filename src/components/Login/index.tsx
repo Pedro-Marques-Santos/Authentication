@@ -1,25 +1,21 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useContext, useState } from "react";
 import { AuthenticationContext } from "../../context/authentication";
 import { OutherLogin } from "../OutherLogin";
 import { ButtonLogin, ButtonRegister, Container, IconeInput, TagOr, Error, ForgetPassword } from "./styles";
 
 import validator from "validator";
+import { useNavigate } from "react-router-dom";
 
-interface User {
-  email: string;
-  id: string;
-  name: string;
-  password: string
-}
 
 interface ResponseUser {
   token?: string;
-  user?: User[];
+  name?: string;
   message?: string;
 }
 
 export function Login() {
+
+  const navegate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -80,11 +76,18 @@ export function Login() {
       }
 
       if (response.status === 200) {
-        console.log(result);
+        console.log(result)
+        setEmail('');
+        setPassword('');
+        navegate('/profile', {
+          state: {
+            user: {
+              name: result.name,
+              token: result.token
+            }
+          }
+        })
       }
-
-      setEmail('');
-      setPassword('');
 
     }
 
